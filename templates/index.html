@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Subtitle Search</title>
+	</head>
+	<body>
+		<h1>雙語字幕搜尋</h1>
+
+		<form method="POST">
+			<input type="text" name="query" placeholder="輸入關鍵字" />
+			<button type="submit">搜尋</button>
+		</form>
+
+		<hr />
+
+		{% for r in results %}
+		<div>
+			<b>{{ r.show }} S{{ r.season }}E{{ r.episode }}</b><br />
+			[{{ r.time }}]<br />
+			EN: {{ r.en }}<br />
+			ZH: {{ r.zh }}
+		</div>
+		<hr />
+		{% endfor %}
+	</body>
+</html>
